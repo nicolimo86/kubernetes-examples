@@ -5,7 +5,7 @@
     "helmfile@latest",
     "k9s@latest",
     "kubectl@latest",
-    "helm@latest"
+    "kubernetes-helm@latest"
   ],
   "shell": {
     "init_hook": [
