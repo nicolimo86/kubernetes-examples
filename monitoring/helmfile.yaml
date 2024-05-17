@@ -1,6 +1,8 @@
 repositories:
   - name: prometheus-community
     url: https://prometheus-community.github.io/helm-charts
+  - name: grafana
+    url: https://grafana.github.io/helm-charts
 
 releases:
   - name: demo
@@ -13,6 +15,10 @@ releases:
     namespace: kube-state-metrics
     chart: prometheus-community/kube-state-metrics
 
+  - name: grafana
+    namespace: grafana
+    chart: grafana/grafana
+  
   - name: prometheus
     namespace: prometheus
     chart: prometheus-community/prometheus

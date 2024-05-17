@@ -5,7 +5,12 @@
     "helmfile@latest",
     "k9s@latest",
     "kubectl@latest",
-    "helm@latest"
+    "kubernetes-helm@latest",
+    "skaffold@latest",
+    "telepresence2@latest",
+    "ripgrep@latest",
+    "dive@latest",
+    "go-task@latest"
   ],
   "shell": {
     "init_hook": [

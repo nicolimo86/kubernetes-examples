@@ -1,0 +1,27 @@
+# https://taskfile.dev
+
+version: '3'
+
+vars:
+  GREETING: Hello, World!
+
+tasks:
+  grafana:
+    cmds:
+      - |
+        echo "GRAFANA USR: admin"
+        printf "GRAFANA PSW: "
+        kubectl get secret --namespace grafana grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
+        echo "###### Create dashboard with Prometheus data:"
+        instructions=$(cat <<'EOF'
+        Click + button on left panel and select ‘Import’
+        Enter 12740 dashboard id under Grafana.com Dashboard
+        Click ‘Load’
+        Select ‘Prometheus’ as the endpoint under Prometheus Data Sources drop down.
+        Click ‘Import’
+        EOF
+        )
+
+        echo "$instructions"
+
+    silent: true
